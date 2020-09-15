@@ -1,0 +1,9 @@
+{
+    "$schema": "https://aka.ms/azure-quickstart-templates-metadata-schema#",
+    "type": "QuickStart",
+    "itemDisplayName": "Azure Digital Twins",
+    "description": "Deploys an Azure Digital Twins instance.",
+    "summary": "Azure Digital Twins deployment.  Use this template as the framework for your custom deployment.",
+    "githubUsername": "andyatwork",
+    "dateUpdated": "2020-09-15"
+  }

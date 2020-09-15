@@ -1,0 +1,9 @@
+{
+    "$schema": "https://aka.ms/azure-quickstart-templates-metadata-schema#",
+    "type": "QuickStart",
+    "itemDisplayName": "Azure Digital Twins with Function",
+    "description": "Deploys an Azure Digital Twins instance with a Function app configured to use a managed service identity. The Function is assigned Azure Digital Twins Owner permissions to the Digital Twins instance.",
+    "summary": "Azure Digital Twins with Function and role assignment.  Use this template as the framework for your custom deployment.",
+    "githubUsername": "andyatwork",
+    "dateUpdated": "2020-09-15"
+  }
