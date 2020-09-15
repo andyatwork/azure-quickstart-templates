@@ -47,6 +47,7 @@
         }
     },
     "variables": {
+        "adtReaderRole": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'd57506d4-4c8d-48b1-8587-93c323f6a5a3')]",
         "adtOwnerRole": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'bcd981a7-7f74-457b-83e1-cceb9e632ffe')]",
         "msiHelperIdentity": "[guid(concat(resourceGroup().id, parameters('adtInstanceName'), '-deploymentscriptmsi'))]",
         "functionAppName": "[parameters('appName')]",
@@ -156,7 +157,7 @@
                 "[parameters('adtInstanceName')]"
             ],
             "properties": {
-                "roleDefinitionId": "[variables('adtOwnerRole')]",
+                "roleDefinitionId": "[variables('adtReaderRole')]",
                 "principalId": "[reference(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('msiHelperIdentity')), '2015-08-31-preview').principalId]",
                 "principalType": "ServicePrincipal"
             }
