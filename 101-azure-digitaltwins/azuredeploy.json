@@ -14,9 +14,16 @@
             "metadata": {
                 "description": "the instance name of the Azure Digital Twins resource"
             }
+        },
+        "principalId": {
+            "type": "string",
+            "metadata": {
+                "description": "principalId if the user that will be given Azure Digital Twins Owner access to the instance"
+            }
         }
     },
     "variables": {
+        "adtOwnerRole": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'bcd981a7-7f74-457b-83e1-cceb9e632ffe')]"
     },
     "resources": [
         {
@@ -25,6 +32,19 @@
             "name": "[parameters('adtInstanceName')]",
             "location": "[parameters('location')]",
             "properties": {
+            }
+        },
+        {
+            "apiVersion": "2018-09-01-preview",
+            "name": "[concat(parameters('adtInstanceName'), '/Microsoft.Authorization/', guid(uniqueString(parameters('adtInstanceName'))))]",
+            "type": "Microsoft.DigitalTwins/digitalTwinsInstances/providers/roleAssignments",
+            "dependsOn": [
+                "[parameters('adtInstanceName')]"
+            ],
+            "properties": {
+                "roleDefinitionId": "[variables('adtOwnerRole')]",
+                "principalId": "[parameters('principalId')]",
+                "principalType": "User"
             }
         }
     ],

@@ -4,6 +4,9 @@
     "parameters": {
         "adtInstanceName": {
             "value": "GEN-UNIQUE"
+        },
+        "principalId": {
+            "value": "GEN-AZUREAD-OBJECTID"
         }
     }
 }
