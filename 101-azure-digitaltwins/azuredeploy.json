@@ -28,14 +28,14 @@
     "resources": [
         {
             "type": "Microsoft.DigitalTwins/digitalTwinsInstances",
-            "apiVersion": "2020-03-01-preview",
+            "apiVersion": "2020-12-01",
             "name": "[parameters('adtInstanceName')]",
             "location": "[parameters('location')]",
             "properties": {
             }
         },
         {
-            "apiVersion": "2018-09-01-preview",
+            "apiVersion": "2020-04-01-preview",
             "name": "[concat(parameters('adtInstanceName'), '/Microsoft.Authorization/', guid(uniqueString(parameters('adtInstanceName'))))]",
             "type": "Microsoft.DigitalTwins/digitalTwinsInstances/providers/roleAssignments",
             "dependsOn": [
